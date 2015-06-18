@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="calportlet">
+	<author>robert</author>
+	<namespace>AcademicEvents</namespace>
+	<!--  Define the entity for Event table in the AcademicEvents database. -->
+	<entity name="Event" local-service="true" remote-service="true" cache-enabled="false">
+		<!-- Primary key column -->
+		<column name="eventId" type="long" primary="true"></column>
+		<!-- Other fields -->
+		<column name="name_hu" type="String"></column>
+		<column name="name_en" type="String"></column>
+		<column name="eventDate" type="Date"></column>
+		<column name="tvsz" type="String"></column>
+		<!-- For the type of events, 1 - general, 2 - student,
+		3 - teacher/EduOffice, 4 - teacher -->
+		<column name="typeofEvent" type="long"></column>
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="eventDate"></order-column>
+		</order>
+		<!-- Finder methods -->
+		<finder name="Name_hu" return-type="Collection">
+			<finder-column name="name_hu"></finder-column>
+		</finder>
+		<finder name="Name_en" return-type="Collection">
+			<finder-column name="name_en"></finder-column>
+		</finder>
+		<finder name="EventDate" return-type="Collection">
+			<finder-column name="eventDate"></finder-column>
+		</finder>
+		<finder name="TypeofEvent" return-type="Collection">
+			<finder-column name="typeofEvent"></finder-column>
+		</finder>
+	</entity>
+</service-builder>

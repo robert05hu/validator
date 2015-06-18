@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="calportlet.model.Event" />
+	<class name="calportlet.model.impl.EventImpl" table="AcademicEvents_Event">
+		<id name="eventId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name_hu" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name_en" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="eventDate" type="org.hibernate.type.TimestampType" />
+		<property name="tvsz" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="typeofEvent" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

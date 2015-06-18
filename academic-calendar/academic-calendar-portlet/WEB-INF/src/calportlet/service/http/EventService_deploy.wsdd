@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_AcademicEvents_EventService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="calportlet.service.http.EventServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="EventServiceSoap" />
+		<parameter name="wsdlServiceElement" value="EventServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_AcademicEvents_EventService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.calportlet" />
+	</service>
+</deployment>
